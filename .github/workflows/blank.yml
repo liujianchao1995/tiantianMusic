@@ -61,7 +61,7 @@ jobs:
         run: |
           npm install rimraf -g
 
-      # step5: cleanup artifacts in dist_electron
+      ## step5: cleanup artifacts in dist_electron
       - name: cleanup artifacts for windows
         if: matrix.os == 'windows-2019'
         run: |
