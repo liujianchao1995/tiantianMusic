@@ -1,0 +1,88 @@
+@import url('http://at.alicdn.com/t/font_2242516_18oc06itl2q.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", "Avenir", "Helvetica", "Arial", "sans-serif";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body,
+html,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+// 取消一些默认效果，使得应用看起来更加原生
+// Cancel default effects to make apps look more native
+input {
+  outline: none;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  -webkit-user-drag: none;
+  color: #B2CCD6;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+
+ul,
+ol {
+  list-style: none
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.mytable-style {
+  .body--wrapper {
+    background: none !important;
+  }
+
+  .vxe-table--header {
+    .vxe-header--column {
+      padding: 5px 0 !important;
+      font-size: 12px;
+      font-weight: 100;
+      color: #646363;
+    }
+  }
+
+  .vxe-table--body {
+    .vxe-body--column {
+      color: #000;
+    }
+    .vxe-body--row.row--hover {
+      background-color: #efefef;
+    }
+  }
+}
+
+.vue-scrollbar__wrapper {
+  height: 100%;
+
+  .scrollbar {
+    border-radius: 8px;
+    opacity: 0.4;
+  }
+}
