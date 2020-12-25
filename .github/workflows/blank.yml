@@ -59,7 +59,7 @@ jobs:
 
       - name: Install rimraf module
         run: |
-          npp install rimraf
+          npm install rimraf
 
       # step5: cleanup artifacts in dist_electron
       - name: cleanup artifacts for windows
