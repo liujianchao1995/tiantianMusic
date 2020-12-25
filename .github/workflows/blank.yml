@@ -55,12 +55,17 @@ jobs:
       #    npm run electron:build
       #  env:
       #    GH_TOKEN: bef0b46667d2b13f8asdasdasd762873af59f71c
+      
+
+      - name: Install rimraf module
+        run: |
+          npp install rimraf
 
       # step5: cleanup artifacts in dist_electron
       - name: cleanup artifacts for windows
         if: matrix.os == 'windows-2019'
         run: |
-          npx rimraf "dist_electron/!(*.exe|*.yml)"
+          rimraf "dist_electron/!(*.exe|*.yml)"
 
       #- name: cleanup artifacts for macosZ
       #  if: matrix.os == 'macos-10.15'
