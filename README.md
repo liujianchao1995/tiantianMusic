@@ -1,24 +1,25 @@
-# test20201225
+## **🍙安装依赖（推荐使用yarn）**
+ 
+```bash
+yarn 或 npm install
+```` 
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+## **🌽启动应用**
+ 
+```bash
+yarn go 或 npm run go
 ```
 
-### Lints and fixes files
-```
-npm run lint
+## **🍭打包应用**
+ 
+```bash
+yarn packapp 或 npm run packapp
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## **🍀模板文档**
+ 
+[Document文档](https://github.com/Pure-Peace/vue-cli-electron-template/wiki)
+
+## **🌹cli配置**
+ 
+[Configuration Reference](https://cli.vuejs.org/config/).
