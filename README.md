@@ -1,25 +1,27 @@
-## **🍙安装依赖（推荐使用yarn）**
+## **🍙安装依赖**
  
 ```bash
-yarn 或 npm install
+npm install
 ```` 
 
 ## **🌽启动应用**
  
 ```bash
-yarn go 或 npm run go
+npm run dev
 ```
 
 ## **🍭打包应用**
  
 ```bash
-yarn packapp 或 npm run packapp
+npm run build
 ```
 
-## **🍀模板文档**
+
+
+### **🍀本项目所用模板的文档**
  
 [Document文档](https://github.com/Pure-Peace/vue-cli-electron-template/wiki)
 
-## **🌹cli配置**
+### **🌹Vue CLI Plugin Electron文档**
  
-[Configuration Reference](https://cli.vuejs.org/config/).
+[Vue CLI Plugin Electron Builder](https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#table-of-contents).

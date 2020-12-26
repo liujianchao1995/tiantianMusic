@@ -45,7 +45,7 @@ jobs:
       - name: build windows app
         if: matrix.os == 'windows-2019'
         run: |
-          npm run packapp
+          npm run build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
