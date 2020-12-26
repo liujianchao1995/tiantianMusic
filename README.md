@@ -20,7 +20,7 @@ npm run build
 
 ### **🍀本项目所用模板的文档**
  
-[Document文档](https://github.com/Pure-Peace/vue-cli-electron-template/wiki)
+[Document文档](https://github.com/Pure-Peace/vue-cli-electron-template/blob/master/README_ZH.md)
 
 ### **🌹Vue CLI Plugin Electron文档**
  
