@@ -2,6 +2,7 @@
  * 进程通信
  */
 import { ipcMain, dialog, app } from 'electron'
+import axios from 'axios'
 import { autoUpdater } from 'electron-updater'
 
 class IpcEvents {
@@ -77,12 +78,19 @@ class IpcEvents {
       checkForUpdates()
     })
 
-    const checkForUpdates = () => {
-      // 配置安装包远端服务器
-      autoUpdater.setFeedURL('http://192.168.31.154:8000/download/')
+    const checkForUpdates = async () => {
+      // 获取github release最新版本信息
+      const githubReleaseApi = await axios.get('https://api.github.com/repos/liujianchao1995/tiantianMusic/releases/latest')
 
-      // 执行自动更新检查
-      autoUpdater.checkForUpdates()
+      if (githubReleaseApi.data && githubReleaseApi.data.tag_name) {
+        // 配置安装包远端服务器
+        autoUpdater.setFeedURL(`https://github.com/liujianchao1995/tiantianMusic/releases/download/${githubReleaseApi.data.tag_name}/`)
+
+        // 执行自动更新检查
+        autoUpdater.checkForUpdates()
+      }
+
+      // autoUpdater.setFeedURL('https://github.com/liujianchao1995/tiantianMusic/releases/download/v0.0.1/')
 
       // 下面是自动更新的整个生命周期所发生的事件
       autoUpdater.on('error', message => {
