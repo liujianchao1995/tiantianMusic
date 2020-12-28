@@ -86,6 +86,6 @@ jobs:
         with:
           files: "dist_electron/**"
           body: ${{ github.event.head_commit.message }}
-          body_path: 'VERSIONLOG.txt'
+          body_path: '/VERSIONLOG.txt'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

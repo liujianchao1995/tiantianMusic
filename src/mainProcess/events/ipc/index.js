@@ -79,8 +79,10 @@ class IpcEvents {
     })
 
     const checkForUpdates = async () => {
+      let releaseNotes = null
       // 获取github release最新版本信息
       const githubReleaseApi = await axios.get('https://api.github.com/repos/liujianchao1995/tiantianMusic/releases/latest')
+      releaseNotes = githubReleaseApi.data.body
 
       if (githubReleaseApi.data && githubReleaseApi.data.tag_name) {
         // 配置安装包远端服务器
@@ -114,7 +116,7 @@ class IpcEvents {
         sendUpdateMessage('downloadProgress', progressObj)
       })
       // 更新下载完成事件
-      autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName, releaseDate, updateUrl, quitAndUpdate) => {
+      autoUpdater.on('update-downloaded', (event, releaseName, releaseDate, updateUrl, quitAndUpdate) => {
         sendUpdateMessage('isUpdateNow', { event, releaseNotes, releaseName, releaseDate, updateUrl, quitAndUpdate })
         ipcMain.on('updateAppNow', (e, arg) => {
           autoUpdater.quitAndInstall()
