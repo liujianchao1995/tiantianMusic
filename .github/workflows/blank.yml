@@ -79,21 +79,11 @@ jobs:
           name: ${{ matrix.os }}
           path: dist_electron
 
-      - name: Build Changelog
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate Changelog
-        run: echo "# Good things have arrived" > ${{ github.workflow }}-CHANGELOG.txt
-
       # step7: create release
       - name: release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: "dist_electron/**"
-          body_path: ${{ github.workflow }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
