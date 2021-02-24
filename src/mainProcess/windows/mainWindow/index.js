@@ -25,6 +25,11 @@ class MainWindow {
       this.win.show()
     })
 
+    this.win.on('close', e => {
+      e.preventDefault()
+      this.win.hide()
+    })
+
     this.win.on('closed', () => {
       this.win = null
     })
@@ -33,6 +38,7 @@ class MainWindow {
   createWindow () {
     if (!this.win) {
       this.win = new BrowserWindow({
+        title: '天天动听',
         width: 1100,
         height: 770,
         minWidth: 1100,

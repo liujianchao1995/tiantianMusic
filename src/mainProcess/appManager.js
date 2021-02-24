@@ -46,7 +46,7 @@ class AppManager {
     if (!this.tray) {
       // eslint-disable-next-line no-undef
       this.tray = new Tray(`${__static}/app.ico`)
-      this.tray.setToolTip('运行中！\nStill Working!')
+      this.tray.setToolTip('发现音乐')
       if (process.platform === 'win32') this.setAppTrayWindow()
       else this.setAppTrayMenu()
     }
@@ -58,23 +58,22 @@ class AppManager {
     const trayWindow = this.windowManager.trayWindow
     trayWindow.createWindow(trayBounds)
     this.tray.on('right-click', (event, bounds) => {
-      event.preventDefault()
       setTimeout(() => {
         const [trayMenuWidth, trayMenuHeight] = trayWindow.win.getSize()
         const { x, y } = screen.getCursorScreenPoint()
         if (x + trayMenuWidth > screen.getPrimaryDisplay().size) {
           trayWindow.win.setPosition(x - trayMenuWidth, y - trayMenuHeight)
         } else {
-          trayWindow.win.setPosition(x, y - trayMenuHeight)
+          trayWindow.win.setPosition(x, y - trayMenuHeight - 6)
         }
         trayWindow.win.show()
-      }, 200)
+      }, 100)
     })
     this.tray.on('click', (event, bounds) => {
       if (!this.windowManager.mainWindow.win) {
         this.windowManager.mainWindow.createWindow()
       }
-      this.windowManager.mainWindow.win.restore()
+      this.windowManager.mainWindow.win.show()
       this.windowManager.mainWindow.win.moveTop()
     })
   }

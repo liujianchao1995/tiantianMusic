@@ -63,8 +63,8 @@ export default {
   computed: {
     audioSrc () {
       return this.isShow
-        ? 'https://cdn2.ear0.com:5443/index/preview.php?soundid=12300&type=mp3'
-        : 'https://cdn2.ear0.com:5443/index/preview.php?soundid=11808&type=mp3'
+        ? require('../assets/audios/alertnotice.mp3')
+        : require('../assets/audios/closenotice.mp3')
     }
   },
   created () {
@@ -140,12 +140,20 @@ export default {
       text-align: justify;
     }
     .notice__closeBtn {
+      width: 20px;
+      height: 20px;
+      padding-left: 2.5px;
       position: absolute;
-      top: 10px;
-      right: 15px;
+      top: 5px;
+      right: 5px;
       cursor: pointer;
       color: #909399;
       font-size: 16px;
+      &:hover {
+        color: #fff;
+        border-radius: 50%;
+        background: #799ee8;
+      }
     }
   }
 }

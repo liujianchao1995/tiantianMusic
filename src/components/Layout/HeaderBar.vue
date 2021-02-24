@@ -103,7 +103,7 @@
       <div class="app-action-button" @click="autoMaximize()">
         <svg-icon icon-class="app-fullsize" />
       </div>
-      <div class="app-action-button button-red" @click="win.close()">
+      <div class="app-action-button button-red" @click="win.hide()">
         <svg-icon icon-class="app-exit" />
       </div>
     </div>

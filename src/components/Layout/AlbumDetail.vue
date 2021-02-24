@@ -62,6 +62,7 @@
         </div>
         <div class="music-list">
           <music-list v-if="tabActived == 'music'" />
+          <loading v-else />
           <div />
         </div>
       </div>
@@ -71,10 +72,12 @@
 
 <script>
 import MusicList from './MusicList'
+import Loading from './Loading'
 import { ipcRenderer } from 'electron'
+import { search as searchApi } from '@/utils/apiIntegration'
 export default {
   name: 'AlbumDetail',
-  components: { MusicList },
+  components: { MusicList, Loading },
   data () {
     return {
       albumData: {
@@ -159,6 +162,7 @@ export default {
     async clickBtn (e) {
       switch (e.name) {
         case 'playAll':
+          searchApi({ apiType: 'miguMusic' })
           ipcRenderer.send('showNotice', {
             type: 'success',
             title: '成功',

@@ -27,8 +27,8 @@ class TrayWindow {
     this.bounds = bounds
     if (!this.win) {
       this.win = new BrowserWindow({
-        height: 140,
-        width: 100,
+        height: 326,
+        width: 196,
         x: bounds.x,
         y: bounds.y - 310,
         show: false,
@@ -38,7 +38,7 @@ class TrayWindow {
         minimizable: false,
         maximizable: false,
         resizable: false,
-        transparent: process.platform !== 'linux',
+        // transparent: process.platform !== 'linux',
         alwaysOnTop: true,
         skipTaskbar: true,
         // parent: global.mainWindow,

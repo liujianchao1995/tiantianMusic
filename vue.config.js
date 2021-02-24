@@ -60,9 +60,10 @@ module.exports = {
           {
             provider: 'generic',
             url: 'http://192.168.31.154:8000/download/' // 可使用autoUpdater.setFeedURL动态配置
-          }
+          },
+          'github'
         ], */
-        productName: 'hahah',
+        productName: '天天动听',
         win: {
           icon: './public/app.ico' // 应用图标
           // artifactName: 'hahah.exe' // 安装文件名
@@ -80,7 +81,7 @@ module.exports = {
           installerHeaderIcon: './public/app.ico', // 安装时头部图标
           createDesktopShortcut: true, // 创建桌面图标
           createStartMenuShortcut: true, // 创建开始菜单图标
-          shortcutName: '测试软件' // 快捷方式名称
+          shortcutName: '天天动听' // 快捷方式名称
           // include: './public/nsis/installer.nsh' // 自定义nsis脚本 安装过程中自行调用  (可用于写入注册表 开机自启动等操作)
         }
       }
